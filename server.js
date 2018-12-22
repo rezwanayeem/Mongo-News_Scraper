@@ -11,7 +11,6 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
-var PORT = 2500;
 
 // Initialize Express
 var app = express();
@@ -59,6 +58,9 @@ app.get("/scrape", function(req, res) {
 
 
 // Start the server
-app.listen(PORT, function() {
-  console.log("App running on port " + PORT + "!");
-});
+app.set( 'port', ( process.env.PORT || 5000 ));
+
+// Start node server
+app.listen( app.get( 'port' ), function() {
+  console.log( 'Node server is running on port ' + app.get( 'port' ));
+  });
