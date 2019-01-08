@@ -8,7 +8,7 @@ $("#scrapeButton").on("click", function () {
         }
     });
 })
-// adding article
+// adding articles
 function addArticle(insertDiv, article) {
     console.log("addArticle()");
     var articlePanel = $("<div>").attr({ "data-id": article.id })
