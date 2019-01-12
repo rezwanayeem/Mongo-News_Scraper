@@ -15,13 +15,12 @@ function addArticle(insertDiv, article) {
     var heading = $("<div>").attr({ "class": "panel-heading" })
     var title = $("<h2>").attr({ "class": "panel-title" })
     var link = $("<div>").attr({ "class": "panel-body" })
-
+    // appending article title and link
     link.text(article.link);
     title.text(article.title);
     heading.append(title);
     articlePanel.append(heading);
     articlePanel.append(link);
-
 
     $(insertDiv).prepend(articlePanel);
 }

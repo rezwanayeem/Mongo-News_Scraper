@@ -5,8 +5,9 @@ var request = require('request');
 var cheerio = require('cheerio');
 var express = require('express');
 var app = express();
-var Article = require("./models/Article.js");
+var Article = require("./Models/Article.js");
 
+var PORT = process.env.PORT || 3030;
 
 //body Parser
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -70,7 +71,7 @@ app.get("/articles", function (request, response) {
 	});
 });
 // start the server
-var port = process.env.PORT || 3100;
-app.listen(port, function () {
-	console.log(port);
-});
+
+app.listen(PORT, function() {
+	console.log("app listening on PORT: " + PORT);
+  });
